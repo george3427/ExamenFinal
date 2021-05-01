@@ -1,23 +1,33 @@
 @extends('layouts.app')
 
+
+@section('style')
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+<div class="container-fluid">
+    <h1 class="mt-4">Wiki de Ayuda</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{{ url('/') }}">Inicio</a></li>
+        <li class="breadcrumb-item active">Wiki De Ayuda</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">
+            Universidad Latina de Heredia.<br>
+            Proyecto 1 <br>
+            George Fernandez.
         </div>
+        
+    </div>
+    <div class="alert alert-info text-center" role="alert">
+        {{ $posts }} Publicaciones registradas en la Wiki.
     </div>
 </div>
+
+
+
+@endsection
+
+@section('scripts')
 @endsection
