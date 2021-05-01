@@ -30,5 +30,15 @@ Route::group(['prefix' => 'wiki','middleware' => 'auth'], function () {
     Route::get('/api/get', 'WikiController@apiGet');
 });
 
+Route::group(['prefix' => 'users','middleware' => 'auth'], function () {
+    Route::get('/index', 'UsuariosController@index');
+    Route::get('/nuevo', 'UsuariosController@nuevo');
+    Route::post('/nuevo', 'UsuariosController@postNuevo');
+    Route::get('/editar/{user_id}', 'UsuariosController@editar');
+    Route::post('/editar/{user_id}', 'UsuariosController@postEditar');
+    Route::get('/eliminar/{user_id}', 'UsuariosController@eliminar');
+    Route::get('/api/get', 'UsuariosController@apiGet');
+});
+
 
 Auth::routes();
