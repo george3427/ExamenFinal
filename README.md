@@ -1,6 +1,6 @@
 # UlatinaProyecto1
 
-Proyecto 1 de Programacion 4 , ULatina Costa Rica
+Examen final
 
 ## Desarrollo
 ```php

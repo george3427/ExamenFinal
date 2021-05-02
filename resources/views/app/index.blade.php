@@ -15,8 +15,7 @@
     <div class="card mb-4">
         <div class="card-body">
             Universidad Latina de Heredia.<br>
-            Proyecto 1 <br>
-            George Fernandez.
+            Examen Final <br>
         </div>
         
     </div>
