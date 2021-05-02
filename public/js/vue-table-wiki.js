@@ -114,6 +114,7 @@
                     direction: 'asc'
                 }],
                 user_id : 0,
+                user_role : '',
                 multiSort: true,
                 perPage: 10,
                 paginationComponent: 'vuetable-pagination',
@@ -212,6 +213,15 @@
                     //Si se ejecuta ver un item
                     if (action == 'edit-item') 
                     {
+                        if(instance.user_role == 'usuario' && instance.user_id != data.user_id){
+                            Swal.fire(
+                                'Solo puedes editar tus publicaciones.',
+                                '',
+                                'error'
+                            );
+                            return;
+                        }
+
                         var win = window.open('/post/editar/'+data.id,"_self");
                         win.focus();
                     } 

@@ -62,7 +62,8 @@
 <script src="{{asset('js/vue-table-wiki.js')}}"></script>
 
 <script >
-vm.user_id = "{{ Auth::user()->id }}" 
+vm.user_id = "{{ Auth::user()->id }}";
+vm.user_role = "{{ Auth::user()->role->rol_tipo }}"; 
 </script>
 
 @endsection
