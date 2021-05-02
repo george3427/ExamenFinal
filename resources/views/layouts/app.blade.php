@@ -48,12 +48,14 @@
                                 </nav>
                             </div>
                             
-                            
+                            @if(Auth::user()->role->rol_tipo == 'admin')
                             <div class="sb-sidenav-menu-heading">Usuarios</div>
                             <a class="nav-link" href="{{ url('/users/index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Control
                             </a>
+                            @endif
+                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
