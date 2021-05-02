@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relacion uno a uno con su respectivo rol
+     *
+     * @return void
+     */
+    public function role()
+    {
+        return $this->hasOne('App\Models\Roles');
+    }
 }
