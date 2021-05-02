@@ -113,6 +113,7 @@
                     field: 'id',
                     direction: 'asc'
                 }],
+                user_id : 0,
                 multiSort: true,
                 perPage: 10,
                 paginationComponent: 'vuetable-pagination',
@@ -120,7 +121,7 @@
                 itemActions: [
                 { name: 'view-item', label: '', icon: 'fas fa-eye', class: 'btn btn-info', extra: {'title': 'Ver', 'data-toggle':"tooltip", 'data-placement': "left"} },
                 { name: 'edit-item', label: '', icon: 'fas fa-edit', class: 'btn btn-warning', extra: {'title': 'Modificar', 'data-toggle':"tooltip", 'data-placement': "center"} },
-                { name: 'delete-item', label: '', icon: 'fas fa-trash', class: 'btn btn-danger', extra: {title: 'Eliminar', 'data-toggle':"tooltip", 'data-placement': "right" }},
+                { name: 'delete-item', label: '', icon: 'fas fa-trash', class: 'btn btn-danger btn-delete', extra: {title: 'Eliminar', 'data-toggle':"tooltip", 'data-placement': "right" }},
              ],
                 moreParams: [],
                
@@ -218,6 +219,15 @@
                     //Si se ejecuta editar un item
                     if (action == 'delete-item') 
                     {   
+                        if(instance.user_id != data.user_id){
+                            Swal.fire(
+                                'No puedes eliminar esta publicacion.',
+                                '',
+                                'error'
+                            );
+                            return;
+                        }
+
                         Swal.fire({
                             title: 'Estas Seguro?',
                             text: "Esta publicacion sera eliminada",

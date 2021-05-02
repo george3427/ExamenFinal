@@ -61,4 +61,8 @@
 <script src="{{asset('js/vue-resource.min.js')}}"></script>
 <script src="{{asset('js/vue-table-wiki.js')}}"></script>
 
+<script >
+vm.user_id = "{{ Auth::user()->id }}" 
+</script>
+
 @endsection
